@@ -1,6 +1,13 @@
 
+  
+    
 
-with customers as (
+    create or replace table `theta-window-375314`.`dbt_ays176`.`customers`
+    
+    
+    OPTIONS()
+    as (
+      with customers as (
 
     select
         id as customer_id,
@@ -55,3 +62,5 @@ final as (
 )
 
 select * from final
+    );
+  

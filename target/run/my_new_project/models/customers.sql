@@ -1,6 +1,8 @@
 
 
-with customers as (
+  create or replace view `theta-window-375314`.`dbt_ays176`.`customers`
+  OPTIONS()
+  as with customers as (
 
     select
         id as customer_id,
@@ -54,4 +56,5 @@ final as (
 
 )
 
-select * from final
+select * from final;
+
