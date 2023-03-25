@@ -33,6 +33,13 @@ models:
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+
+      - name: customer_id
+        tests:
+        - relationships :
+            to : ref('stg_customers')
+            field : customer_id
+
   - name: stg_payments
     description: This model holds the payment related info
     columns:
@@ -45,10 +52,10 @@ models:
         tests:
          - accepted_values:
               values: ['credit_card','bank_transfer','coupon','gift_card']
-      - name : customer_id
+      - name : orderid
         tests:
         - relationships :
-            to : ref('stg_customers')
-            field : customer_id
+            to : ref('stg_orders')
+            field : order_id
 
       
